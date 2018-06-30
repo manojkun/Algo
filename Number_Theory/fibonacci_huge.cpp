@@ -29,13 +29,15 @@ long long int fib(long long int k,long long int m){
 }
 
 int main() {
-    long long int n, m;
-    std::cin >> n >> m;
+    long long int n, m=10;
+    std::cin >> n;
     long long int pisano = get_pisano_period(m);
     //std::cout<<pisano<<" is pisano\n";
-    long long int tmp = n % pisano;
+    long long int tmp = (n+2) % pisano;
     //std::cout<<"tmp is "<<tmp<<"\n";
-    long long int ans = fib(tmp,m);
+    long long int ans = fib(tmp,m)-1;
+    if(ans<0)
+	    ans += 10;
     std::cout<<ans<<"\n";
     return 0;
 }
