@@ -3,7 +3,6 @@ def sieve(n):
     if n<2:
         return
     composite = [1]*(n+1)
-    PrimeFactors = []
     for i in range(2,n+1):
         if composite[i]==1:
              composite[i]=i
